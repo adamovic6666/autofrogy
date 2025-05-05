@@ -1,0 +1,20 @@
+.about {
+  padding: 8rem 0;
+  background-color: var(--gray-dark);
+  color: var(--white);
+}
+
+.about > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  position: relative;
+  aspect-ratio: 2.15/ 1;
+  width: 100%;
+  height: auto;
+  margin: 4rem 0;
+}

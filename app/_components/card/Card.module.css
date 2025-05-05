@@ -1,0 +1,25 @@
+.card {
+  transition: all 0.3s ease;
+  border-radius: 3.2rem;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  background-color: var(--gray-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6.4rem;
+  margin-bottom: 0;
+  padding: 0 1.6rem;
+}

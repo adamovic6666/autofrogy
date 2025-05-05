@@ -1,0 +1,51 @@
+.header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem;
+}
+
+.header nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.logo {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  aspect-ratio: 36 / 5;
+}
+
+.search {
+  padding-left: 3.2rem;
+  background: var(--red) url("/images/search.svg") no-repeat 1.2rem center;
+  background-size: 1.6rem;
+  border: none;
+  border-radius: 2.4rem;
+  overflow: hidden;
+}
+
+.search input {
+  padding: 0.8rem 1.6rem 0.8rem 0.4rem;
+  width: 100%;
+  max-width: 16rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1.6rem;
+  background-color: transparent;
+  color: var(--white);
+  outline: none;
+  height: 3.8srem;
+}
+
+.search input::placeholder {
+  color: var(--white);
+  font-size: 1.6rem;
+}

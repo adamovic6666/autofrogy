@@ -1,0 +1,11 @@
+.footer {
+  background-color: var(--gray-dark);
+}
+
+.footer > div {
+  display: flex;
+  padding: 1.6rem 0;
+  justify-content: space-between;
+  color: var(--white);
+  font-size: 1.4rem;
+}
