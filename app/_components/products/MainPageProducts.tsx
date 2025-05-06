@@ -13,12 +13,27 @@ const MainPageProducts = () => {
           odgovaraju najvišim standardima savremenih vozila.
         </p>
         <div className={styles.grid}>
-          <Card image="image" title="AUTO KOPČE" />
-          <Card image="image" title="KOPČE PODIZAČA STAKLA" />
-          <Card image="image" title="FIKSATORI ZA PATOSNICE" />
-          <Card image="image" title="UKRASNE KAPICE ZA ŠRAFOVE" />
-          <Card image="image" title="Auto delovi" />
-          <Card image="image" title="NOSAČI I RAMOVI ZA TABLICE" />
+          <Card image="/images/auto-kopce.webp" title="AUTO KOPČE" />
+          <Card
+            image="/images/kopce-podizaca-stakla.webp"
+            title="KOPČE PODIZAČA STAKLA"
+          />
+          <Card
+            image="/images/fiksatori-za-patosnice.webp"
+            title="FIKSATORI ZA PATOSNICE"
+          />
+          <Card
+            image="/images/ukrasne-kapice.webp"
+            title="UKRASNE KAPICE ZA ŠRAFOVE"
+          />
+          <Card
+            image="/images/reduktori-auto-delova.webp"
+            title="Auto delovi"
+          />
+          <Card
+            image="/images/ramovi-za-tablice.webp"
+            title="NOSAČI I RAMOVI ZA TABLICE"
+          />
         </div>
         <Link href="/products" className="link-red">
           Kompletna ponuda

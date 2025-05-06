@@ -55,7 +55,7 @@ h6 {
 }
 
 .container-small {
-  max-width: 72rem;
+  max-width: 74rem;
 }
 
 a,
@@ -91,8 +91,8 @@ h2 {
 }
 
 h4 {
-  font-size: clamp(1.25rem, 0.714vw + 1.107rem, 1.72rem);
-  letter-spacing: 0.15rem;
+  font-size: clamp(1.25rem, 0.714vw + 1.107rem, 1.9rem);
+  line-height: 1.1;
 }
 
 h5 {
@@ -102,11 +102,11 @@ h5 {
 .link-red {
   background-color: var(--red);
   color: var(--white);
-  padding: 0.8rem 2.4rem;
+  padding: 0.6rem 2.4rem;
   border-radius: 2.4rem;
   text-decoration: none;
   font-weight: 300;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 @media (min-width: 112rem) {

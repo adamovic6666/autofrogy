@@ -11,7 +11,7 @@ const AboutUs = () => {
           proizvodnjom delova od plastike za auto- industriju. Na samom početku
           firma se bavila isključivo proizvodnjom auto-kopči, ali konstantim
           ulaganjem u proizvodnju i razvoj novih proizvoda razvijen je
-          prepoznatljiv brend <strong>AUTO FROGY</strong> , koji danas
+          prepoznatljiv brend <strong>AUTO FROGY</strong>, koji danas
           predstavlja garanciju kvaliteta u industriji. U ponudi, pored auto-
           kopči i žabica, imamo i kopče podizača stakla, univerzalne nastavke i
           reducire, ukrasne kapice za šrafove, čepove za patosnice, ramove i
