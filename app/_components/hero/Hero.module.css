@@ -1,7 +1,6 @@
 .hero {
   background: url("/images/hero.webp") no-repeat center center;
   background-size: cover;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,6 +8,8 @@
   color: var(--white);
   padding: 0 2rem;
   position: relative;
+  aspect-ratio: 1920 / 785;
+  padding-top: 7rem;
 }
 
 .hero > div {
@@ -18,7 +19,7 @@
 
 .hero a {
   background: url("/images/download.svg") no-repeat 1.6rem center, var(--red);
-  padding-left: 4.8rem;
+  padding-left: 4rem;
   background-size: 1.6rem;
 }
 

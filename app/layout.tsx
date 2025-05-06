@@ -6,7 +6,7 @@ import { Open_Sans } from "next/font/google";
 const openSans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-open-sans",
-  weight: ["400", "700", "800"],
+  weight: ["300", "400", "700", "800"],
 });
 
 export default function RootLayout({

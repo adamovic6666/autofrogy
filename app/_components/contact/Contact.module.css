@@ -23,7 +23,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  width: 40%;
+  width: 45%;
   position: relative;
   z-index: 2;
 }
@@ -31,15 +31,20 @@
 .contactInfo > div {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.4rem;
   position: relative;
   z-index: 2;
+  margin-bottom: 4rem;
 }
 
 .contactInfo a {
   text-decoration: none;
   position: relative;
   z-index: 2;
+}
+
+.contactInfo > a {
+  text-decoration: underline;
 }
 
 .social svg {
@@ -59,8 +64,8 @@
   background-size: cover;
   content: "";
   position: absolute;
-  bottom: -6.4rem;
-  left: -100%;
+  bottom: -7.2rem;
+  left: -120%;
   aspect-ratio: 1000 / 697;
   width: 40rem;
   height: auto;

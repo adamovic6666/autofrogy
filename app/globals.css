@@ -55,15 +55,19 @@ h6 {
 }
 
 .container-small {
-  max-width: 80rem;
+  max-width: 72rem;
 }
 
 a,
 p {
-  font-family: var(--font-georgia-pro);
   color: var(--text-primary);
   font-size: 1.6rem;
-  line-height: 1.6;
+  line-height: 1.45;
+  letter-spacing: 0.03rem;
+}
+
+li {
+  letter-spacing: -0.02rem;
 }
 
 h1,
@@ -77,8 +81,8 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 3.571vw + 1.786rem, 6.4rem);
-  max-width: 92rem;
+  font-size: clamp(2rem, 2.143vw + 1.571rem, 3.5rem);
+  max-width: 58rem;
   line-height: 1.2;
 }
 
@@ -87,7 +91,8 @@ h2 {
 }
 
 h4 {
-  font-size: clamp(1.25rem, 0.714vw + 1.107rem, 1.75rem);
+  font-size: clamp(1.25rem, 0.714vw + 1.107rem, 1.72rem);
+  letter-spacing: 0.15rem;
 }
 
 h5 {
@@ -100,6 +105,8 @@ h5 {
   padding: 0.8rem 2.4rem;
   border-radius: 2.4rem;
   text-decoration: none;
+  font-weight: 300;
+  font-size: 1.8rem;
 }
 
 @media (min-width: 112rem) {
