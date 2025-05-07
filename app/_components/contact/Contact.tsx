@@ -36,9 +36,8 @@ const Contact = () => {
             >
               <YouTube /> YouTube
             </a>
+            <Link href="/">Podaci o preduzeću</Link>
           </div>
-
-          <Link href="/">Podaci o preduzeću</Link>
         </div>
         <div className={styles.map}>
           <iframe

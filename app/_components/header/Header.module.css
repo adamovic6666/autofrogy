@@ -131,41 +131,40 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 20000;
-  display: flex;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
 }
 
 .mobileSearchContainer {
-  width: 100%;
+  width: calc(100% - 1.6rem);
   max-width: 400px;
-  background-color: var(--white);
-  border-radius: 0.8rem;
-  padding: 2rem;
-  position: relative;
+  position: absolute;
+  left: 0.8rem;
+  top: 0.1rem;
 }
 
 .mobileSearchClose {
   position: absolute;
-  top: 0.4rem;
+  top: 1.4rem;
   right: 0.8rem;
   font-size: 2rem;
   cursor: pointer;
-  color: var(--red);
+  color: var(--white);
 }
 
 .mobileSearchInput {
   display: flex;
   align-items: center;
-  border-bottom: 2px solid var(--red);
   overflow: hidden;
   margin-top: 1rem;
+  width: calc(100% - 4rem);
+  border-radius: 2.4rem;
 }
 
 .mobileSearchInput input {
   width: 100%;
-  padding: 1rem 0;
+  padding: 1rem 1rem 0.8rem;
   border: none;
   outline: none;
   font-size: 1.6rem;

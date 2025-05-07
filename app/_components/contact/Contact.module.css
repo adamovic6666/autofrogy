@@ -8,25 +8,28 @@
   display: flex;
   gap: 4rem;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
 .map {
   position: relative;
-  aspect-ratio: 1.4 / 1;
+  aspect-ratio: 1.2 / 1;
   width: 100%;
   height: auto;
   border-radius: 1.6rem;
   overflow: hidden;
+  z-index: 1;
 }
 
 .contactInfo {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .contactInfo > div {
@@ -35,7 +38,11 @@
   gap: 1.4rem;
   position: relative;
   z-index: 2;
-  margin-bottom: 4rem;
+  margin-bottom: 2.4rem;
+}
+
+.contactInfo > div * {
+  line-height: 2.4rem;
 }
 
 .contactInfo a {
@@ -65,12 +72,16 @@
   background-size: cover;
   content: "";
   position: absolute;
-  bottom: -4rem;
-  left: -120%;
+  bottom: -50%;
+  left: -25%;
   aspect-ratio: 1000 / 697;
   width: 40rem;
   height: auto;
-  z-index: 0;
+  z-index: -1;
+}
+
+.contactInfo > div:nth-of-type(2) > a:last-of-type {
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 768px) {
@@ -84,9 +95,33 @@
 
   .contactInfo {
     width: 45%;
+    flex-direction: column;
   }
 
   .contact > div {
     gap: 6.4rem;
+  }
+
+  .contactInfo > div:not(:last-of-type) {
+    margin-bottom: 4rem;
+  }
+
+  .contactInfo > div:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .contactInfo > div:nth-of-type(2) > a:last-of-type {
+    margin-top: 2.6rem;
+  }
+
+  .map {
+    aspect-ratio: 1.4 / 1;
+  }
+
+  .contactInfo::before {
+    bottom: -4rem;
+    left: -120%;
+    aspect-ratio: 1000 / 697;
+    width: 40rem;
   }
 }

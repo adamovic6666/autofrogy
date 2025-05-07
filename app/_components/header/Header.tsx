@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./Header.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Facebook from "@/app/_svg/Facebook";
 import YouTube from "@/app/_svg/YouTube";
 
@@ -11,21 +11,29 @@ const Header = () => {
 
   const handleOpenMenu = () => {
     setMenuIsOpen((prev) => !prev);
-    document.body.style.overflow = menuIsOpen ? "hidden" : "auto";
   };
 
   const handleOpenSearch = () => {
     setSearchIsOpen((prev) => !prev);
-    document.body.style.overflow = searchIsOpen ? "hidden" : "auto";
   };
+
+  useEffect(() => {
+    if (menuIsOpen || searchIsOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [menuIsOpen, searchIsOpen]);
 
   return (
     <header className={styles.header}>
       <div className="container">
         <div className={styles.burger} onClick={handleOpenMenu} />
-        <div className={styles.logo}>
-          <Image src={"/images/logo.webp"} alt="logo" fill />
-        </div>
+        {!searchIsOpen && (
+          <div className={styles.logo}>
+            <Image src={"/images/logo.webp"} alt="logo" fill />
+          </div>
+        )}
         <nav className={`${styles.nav} ${menuIsOpen ? styles.open : ""}`}>
           <ul>
             <li>početna</li>
@@ -45,8 +53,9 @@ const Header = () => {
         <div className={styles.search}>
           <input type="text" placeholder="Pretraži..." />
         </div>
-
-        <div className={styles.mobileSearch} onClick={handleOpenSearch} />
+        {!searchIsOpen && (
+          <div className={styles.mobileSearch} onClick={handleOpenSearch} />
+        )}{" "}
       </div>
 
       {/* Mobile Search Overlay */}
