@@ -14,7 +14,7 @@
 
 .map {
   position: relative;
-  aspect-ratio: 1.2 / 1;
+  aspect-ratio: 1 / 1;
   width: 100%;
   height: auto;
   border-radius: 1.6rem;
@@ -43,6 +43,7 @@
 
 .contactInfo > div * {
   line-height: 2.4rem;
+  font-size: 1.4rem;
 }
 
 .contactInfo a {
@@ -123,5 +124,9 @@
     left: -120%;
     aspect-ratio: 1000 / 697;
     width: 40rem;
+  }
+
+  .contactInfo > div * {
+    font-size: 1.6rem;
   }
 }

@@ -4,9 +4,10 @@ const YouTube = ({ fill }: { fill?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24px"
-      height="24px"
+      width="32px"
+      height="32px"
       viewBox="0 0 72 72"
+      style={{ transform: "scale(0.92)" }}
     >
       <g fill="none" fill-rule="evenodd">
         <path
