@@ -25,9 +25,9 @@
 }
 
 .hero a {
-  background: url("/images/download.svg") no-repeat 1.6rem center, var(--red);
+  background: url("/images/download.svg") no-repeat 1.2rem center, var(--red);
   padding-left: 4rem;
-  background-size: 1.6rem;
+  background-size: 2.4rem;
 }
 
 .hero::after {

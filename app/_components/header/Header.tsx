@@ -2,6 +2,8 @@
 import Image from "next/image";
 import styles from "./Header.module.css";
 import { useState } from "react";
+import Facebook from "@/app/_svg/Facebook";
+import YouTube from "@/app/_svg/YouTube";
 
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -20,6 +22,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className="container">
+        <div className={styles.burger} onClick={handleOpenMenu} />
         <div className={styles.logo}>
           <Image src={"/images/logo.webp"} alt="logo" fill />
         </div>
@@ -31,15 +34,19 @@ const Header = () => {
             <li>katalog</li>
             <li>kontakt</li>
           </ul>
+
+          <div className={styles.socials}>
+            <Facebook fill="#000" />
+            <YouTube fill="#000" />
+          </div>
+
+          <div className={styles.bgImage}></div>
         </nav>
         <div className={styles.search}>
           <input type="text" placeholder="Pretraži..." />
         </div>
 
-        <div className={styles.actions}>
-          <div className={styles.mobileSearch} onClick={handleOpenSearch} />
-          <div className={styles.burger} onClick={handleOpenMenu} />
-        </div>
+        <div className={styles.mobileSearch} onClick={handleOpenSearch} />
       </div>
 
       {/* Mobile Search Overlay */}
@@ -54,14 +61,6 @@ const Header = () => {
           </div>
           <div className={styles.mobileSearchInput}>
             <input type="text" placeholder="Pretraži..." />
-            {/* <button className={styles.mobileSearchButton}>
-              <Image
-                src="/images/search-red.svg"
-                alt="Search"
-                width={24}
-                height={24}
-              />
-            </button> */}
           </div>
         </div>
       </div>

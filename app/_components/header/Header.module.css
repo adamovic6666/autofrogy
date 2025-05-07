@@ -10,35 +10,53 @@
 .header > div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 1.6rem;
+  justify-content: space-between;
 }
 
 .header .nav {
   position: fixed;
-  top: 6rem;
+  top: 5.8rem;
   left: 0;
-  height: calc(100vh - 6rem);
+  height: calc(100vh - 5.8rem);
   width: 100%;
-  background-color: var(--white);
+  background-color: var(--gray-light);
   z-index: 10000;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
   padding-left: -4rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.socials {
+  position: absolute;
+  left: 50%;
+  bottom: 8rem;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.2rem;
+}
+
+.socials svg {
+  width: 4rem;
+  height: 4rem;
 }
 
 .header .nav ul {
   list-style: none;
-  padding: 4rem 0 0 2.4rem;
   margin-top: -6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
 }
 
 .header .nav ul li {
   font-size: 2.4rem;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 2.4rem;
 }
 
@@ -58,11 +76,12 @@
 
 .search {
   padding-left: 3.2rem;
-  background: var(--red) url("/images/search.svg") no-repeat 1.2rem center;
-  background-size: 1.6rem;
+  background: var(--red) url("/images/search.svg") no-repeat 0.8rem center;
+  background-size: 2.4rem;
   border: none;
   border-radius: 2.4rem;
   overflow: hidden;
+  display: none;
 }
 
 .search input {
@@ -81,7 +100,7 @@
 
 .mobileSearch {
   background: url("/images/search-red.svg") no-repeat center center;
-  background-size: 2.8rem;
+  background-size: 3.6rem;
   width: 2.4rem;
   height: 2.4rem;
   cursor: pointer;
@@ -96,12 +115,11 @@
 
 .burger {
   background: url("/images/burger.svg") no-repeat center center;
-  background-size: 2.4rem;
+  background-size: 3.2rem;
   width: 2.4rem;
   height: 2.4rem;
   cursor: pointer;
   border: none;
-  filter: invert(1);
 }
 
 /* Mobile Search Overlay */
@@ -166,6 +184,20 @@
   gap: 1.6rem;
 }
 
+.bgImage {
+  background: url("/images/auto-frogy-icon.webp") no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 75dvw;
+  opacity: 0.2;
+}
+
 @media screen and (min-width: 768px) {
   .header .nav ul {
     display: flex;
@@ -174,7 +206,15 @@
     margin: 0;
     gap: 1rem;
     text-transform: uppercase;
+    flex-direction: row;
+  }
+
+  .header .nav ul li {
     font-weight: 700;
+  }
+
+  .search {
+    display: block;
   }
 
   .search input {
@@ -191,6 +231,8 @@
     margin-bottom: 0;
   }
 
+  .bgImage,
+  .socials,
   .mobileSearchOverlay,
   .mobileSearch,
   .actions,
