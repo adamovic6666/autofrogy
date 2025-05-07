@@ -1,12 +1,13 @@
 .contact {
-  padding: 8rem 0;
+  padding: 6.4rem 0;
   background-color: var(--gray-ultra-dark);
   color: var(--white);
 }
 
 .contact > div {
   display: flex;
-  gap: 6.4rem;
+  gap: 4rem;
+  flex-direction: column;
 }
 
 .map {
@@ -23,7 +24,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  width: 45%;
+  width: 100%;
   position: relative;
   z-index: 2;
 }
@@ -70,4 +71,22 @@
   width: 40rem;
   height: auto;
   z-index: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .contact {
+    padding: 8rem 0;
+  }
+
+  .contact > div {
+    flex-direction: row;
+  }
+
+  .contactInfo {
+    width: 45%;
+  }
+
+  .contact > div {
+    gap: 6.4rem;
+  }
 }

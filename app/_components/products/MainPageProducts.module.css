@@ -1,9 +1,5 @@
 .products {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 8rem 0;
+  padding: 6.4rem 0;
   background-color: var(--gray-light);
 }
 
@@ -21,8 +17,19 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 2.4rem;
+  grid-template-columns: repeat(2, auto);
+  gap: 1.6rem;
   padding: 3.2rem 0;
   margin-bottom: 1.6rem;
+}
+
+@media screen and (min-width: 768px) {
+  .products {
+    padding: 8rem 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, auto);
+    gap: 2.4rem;
+  }
 }

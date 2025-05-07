@@ -18,7 +18,7 @@ const AboutUs = () => {
           nosače za tablice – i još mnogo toga.
         </p>
         <div className={styles.image}>
-          <Image src={"/images/about-us.webp"} alt="About Us" layout="fill" />
+          <Image src={"/images/about-us.webp"} alt="About Us" fill />
         </div>
         <Link href="/" className="link-red">
           Saznaj više

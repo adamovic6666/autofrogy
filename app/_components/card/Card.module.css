@@ -2,18 +2,33 @@
   transition: all 0.3s ease;
   border-radius: 3.6rem;
   overflow: hidden;
+  box-shadow: 0 0.4rem 1.6rem rgba(59, 59, 59, 0.1);
+  cursor: pointer;
+}
+
+.card:hover .image img {
+  transform: scale(1.05);
+}
+
+.card:hover {
+  transform: translateY(-0.4rem);
 }
 
 .image {
   width: 100%;
   height: auto;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1.4 / 1;
   background-color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
   max-height: 16.4rem;
   position: relative;
+  overflow: hidden;
+}
+
+.image img {
+  transition: all 0.3s ease;
 }
 
 .title {
@@ -23,5 +38,11 @@
   justify-content: center;
   height: 7.2rem;
   margin-bottom: 0;
-  padding: 0 1.6rem;
+  padding: 0 0.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    padding: 0 1.6rem;
+  }
 }
