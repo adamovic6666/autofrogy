@@ -14,12 +14,19 @@
 
 .map {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1.2;
   width: 100%;
   height: auto;
   border-radius: 1.6rem;
   overflow: hidden;
   z-index: 1;
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.6rem;
+  border: none;
 }
 
 .contactInfo {
@@ -41,7 +48,11 @@
   margin-bottom: 2.4rem;
 }
 
-.contactInfo > div * {
+.contactInfo > div h5 {
+  text-transform: uppercase;
+}
+
+.contactInfo > div *:not(h5) {
   line-height: 2.4rem;
   font-size: 1.4rem;
 }
@@ -83,6 +94,7 @@
 
 .contactInfo > div:nth-of-type(2) > a:last-of-type {
   text-decoration: underline;
+  margin-top: 3.6rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -128,5 +140,9 @@
 
   .contactInfo > div * {
     font-size: 1.6rem;
+  }
+
+  .contactInfo > div h5 {
+    text-transform: unset;
   }
 }

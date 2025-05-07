@@ -93,12 +93,12 @@ h2 {
 }
 
 h4 {
-  font-size: clamp(1vw, 0.714vw + 1.107rem, 1.9rem);
+  font-size: clamp(1.1vw, 0.75vw + 1.107rem, 1.9rem);
   line-height: 1.1;
 }
 
 h5 {
-  font-size: clamp(1.35rem, 0.536vw + 1.018rem, 1.6rem);
+  font-size: clamp(1.5rem, 0.536vw + 1.018rem, 1.6rem);
 }
 
 .link-red {
