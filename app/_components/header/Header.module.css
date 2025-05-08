@@ -184,16 +184,16 @@
 }
 
 .bgImage {
-  background: url("/images/auto-frogy-icon.webp") no-repeat center center;
+  background: url("/images/auto-frogy-icon.webp") no-repeat bottom center;
   background-size: contain;
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-47%);
   right: 0;
-  bottom: 0;
+  bottom: 15%;
   z-index: -1;
-  width: 75dvw;
+  width: 90dvw;
   opacity: 0.2;
 }
 

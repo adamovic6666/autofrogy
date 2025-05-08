@@ -9,7 +9,7 @@ const Contact = () => {
         <div className={styles.contactInfo}>
           <div>
             <h5>SZTR UGREN</h5>
-            <span>Cara Dušana 144,</span>
+            <span>Cara Dušana 144</span>
             <span>22320 Inđija, Srbija</span>
             <span>
               T: <a href="tel:+38122551121">+381.22.551.121</a>
@@ -19,7 +19,9 @@ const Contact = () => {
             </span>
           </div>
           <div>
-            <h5>Pratite nas:</h5>
+            <h5>
+              Pratite nas <span>:</span>
+            </h5>
             <a
               className={styles.social}
               href="https://www.facebook.com/autofrogy/"
