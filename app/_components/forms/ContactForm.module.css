@@ -1,0 +1,49 @@
+.contactForm {
+  background-color: var(--gray-light);
+  padding: 6.4rem 0;
+}
+
+.contactForm > div {
+  max-width: 60rem;
+}
+
+.contactForm p {
+  text-align: center;
+  color: #333;
+}
+
+.inputGroup,
+.contactForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.contactForm form {
+  padding-top: 4rem;
+}
+
+.contactForm form button {
+  margin-top: 0.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .contactForm {
+    padding: 8rem 0;
+  }
+
+  .contactForm form {
+    padding-top: 6.4rem;
+    gap: 2.4rem;
+  }
+
+  .contactForm form button {
+    margin-top: 1.6rem;
+  }
+
+  .inputGroup {
+    display: flex;
+    flex-direction: row;
+    gap: 2.4rem;
+  }
+}

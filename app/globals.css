@@ -60,12 +60,14 @@ h6 {
   max-width: 74rem;
 }
 
+button,
 a,
 p {
   color: var(--text-primary);
   font-size: 1.6rem;
   line-height: 1.45;
   letter-spacing: 0.03rem;
+  font-family: var(--font-open-sans);
 }
 
 li {
@@ -93,7 +95,7 @@ h2 {
 }
 
 h4 {
-  font-size: clamp(1.3vw, 1vw + 1.107rem, 1.9rem);
+  font-size: clamp(1.3rem, 0.8vw + 1rem, 1.9rem);
   line-height: 1.1;
 }
 
@@ -101,6 +103,7 @@ h5 {
   font-size: clamp(1.5rem, 0.536vw + 1.018rem, 1.6rem);
 }
 
+.button-red,
 .link-red {
   background-color: var(--red);
   color: var(--white);
@@ -114,6 +117,15 @@ h5 {
 
 .link-red:hover {
   background-color: var(--red-dark);
+}
+
+.swiper {
+  position: static !important;
+}
+
+.swiper-button-disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 @media (min-width: 112rem) {

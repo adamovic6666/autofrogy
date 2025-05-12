@@ -1,0 +1,36 @@
+.wellcome {
+  padding: 6.4rem 0;
+  background-color: var(--gray-light);
+}
+
+.wellcome p {
+  color: #333;
+}
+
+.wellcomeVideo {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 4rem;
+}
+
+.wellcomeVideo iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.6rem;
+  border: none;
+}
+
+@media screen and (min-width: 768px) {
+  .wellcome {
+    padding: 8rem 0;
+  }
+
+  .wellcomeVideo {
+    margin-top: 6.4rem;
+  }
+}

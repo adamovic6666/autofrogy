@@ -1,0 +1,49 @@
+.InputWrapper {
+  width: 100%;
+  position: relative;
+}
+
+.InputWrapper textarea,
+.InputWrapper input {
+  width: 100%;
+  border: none;
+  background-color: var(--white);
+  color: #333;
+  font-size: 1.4rem;
+  outline: none;
+  border-bottom: 1px solid var(--color-grey);
+  padding: 0.8rem 1.6rem;
+  transition: all 0.3s;
+  font-family: var(--font-georgia-pro);
+  border-radius: 2.4rem;
+}
+
+.InputWrapper input {
+  max-height: 3.4rem;
+}
+
+.InputError textarea::placeholder,
+.InputWrapper input::placeholder {
+  color: #333;
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-family: var(--font-open-sans);
+}
+
+.InputWrapper textarea {
+  resize: none;
+  min-height: 11.2rem;
+}
+
+.InputError {
+  color: var(--color-error);
+  font-size: 1.2rem;
+  font-weight: 400;
+  position: absolute;
+  top: -1rem;
+  right: 0;
+}
+
+.InputWrapper:has(textarea) .InputError {
+  top: -0.6rem;
+}

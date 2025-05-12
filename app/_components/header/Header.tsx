@@ -4,10 +4,14 @@ import styles from "./Header.module.css";
 import { useEffect, useState } from "react";
 import Facebook from "@/app/_svg/Facebook";
 import YouTube from "@/app/_svg/YouTube";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { navLinks } from "@/app/utils/nav-links";
 
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [searchIsOpen, setSearchIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const handleOpenMenu = () => {
     setMenuIsOpen((prev) => !prev);
@@ -36,11 +40,19 @@ const Header = () => {
         )}
         <nav className={`${styles.nav} ${menuIsOpen ? styles.open : ""}`}>
           <ul>
-            <li>početna</li>
-            <li>o nama</li>
-            <li>proizvodi</li>
-            <li>katalog</li>
-            <li>kontakt</li>
+            {navLinks.map(({ label, href }) => (
+              <li key={label}>
+                <Link
+                  onClick={handleOpenMenu}
+                  href={href}
+                  className={
+                    pathname === href ? styles.activeLink : styles.link
+                  }
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
 
           <div className={styles.socials}>

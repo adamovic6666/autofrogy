@@ -2,16 +2,12 @@
   transition: all 0.3s ease;
   border-radius: 1.6rem;
   overflow: hidden;
-  box-shadow: 0 0.4rem 1.6rem rgba(59, 59, 59, 0.1);
   cursor: pointer;
+  width: 100%;
 }
 
 .card:hover .image img {
   transform: scale(1.05);
-}
-
-.card:hover {
-  transform: translateY(-0.4rem);
 }
 
 .image {
@@ -39,6 +35,12 @@
   height: 5.2rem;
   margin-bottom: 0;
   padding: 0 0.8rem;
+  width: 100%;
+}
+
+.title h4 {
+  margin: 0;
+  max-width: 12rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -48,5 +50,10 @@
 
   .title {
     height: 7.2rem;
+  }
+
+  .title h4 {
+    margin: 0;
+    max-width: 20rem;
   }
 }

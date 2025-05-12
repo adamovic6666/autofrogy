@@ -1,0 +1,16 @@
+.Button {
+  border: unset;
+  cursor: pointer;
+  width: min-content;
+}
+
+.Disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+@media (min-width: 768px) {
+  .Button:hover {
+    background-color: var(--red-dark);
+  }
+}

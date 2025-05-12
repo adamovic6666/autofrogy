@@ -7,7 +7,9 @@ const Card = ({ image, title }: { image: string; title: string }) => {
       <div className={styles.image}>
         <Image src={image} alt={title} fill />
       </div>
-      <h4 className={styles.title}>{title}</h4>
+      <div className={styles.title}>
+        <h4>{title}</h4>
+      </div>
     </article>
   );
 };

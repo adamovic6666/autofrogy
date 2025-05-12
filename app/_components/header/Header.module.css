@@ -53,11 +53,12 @@
   padding: 0;
 }
 
-.header .nav ul li {
+.header .nav ul li a {
   font-size: 2.4rem;
   text-transform: uppercase;
   font-weight: 800;
   margin-bottom: 2.4rem;
+  display: block;
 }
 
 .open {
@@ -197,6 +198,15 @@
   opacity: 0.2;
 }
 
+.header .nav ul li a {
+  text-decoration: none;
+}
+
+.activeLink {
+  color: var(--gray-ultra-dark);
+  opacity: 0.6;
+}
+
 @media screen and (min-width: 768px) {
   .header .nav ul {
     display: flex;
@@ -225,9 +235,10 @@
     all: unset;
   }
 
-  .header .nav ul li {
+  .header .nav ul li a {
     font-size: 1.6rem;
     margin-bottom: 0;
+    font-weight: 700;
   }
 
   .bgImage,

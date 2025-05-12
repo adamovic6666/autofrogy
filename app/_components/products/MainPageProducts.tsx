@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Card from "../card/Card";
 import styles from "./MainPageProducts.module.css";
+import { categories } from "@/app/utils/categories";
 
 const MainPageProducts = () => {
   return (
@@ -13,27 +14,9 @@ const MainPageProducts = () => {
           odgovaraju najvišim standardima savremenih vozila.
         </p>
         <div className={styles.grid}>
-          <Card image="/images/auto-kopce.webp" title="AUTO KOPČE" />
-          <Card
-            image="/images/kopce-podizaca-stakla.webp"
-            title="KOPČE PODIZAČA STAKLA"
-          />
-          <Card
-            image="/images/fiksatori-za-patosnice.webp"
-            title="FIKSATORI ZA PATOSNICE"
-          />
-          <Card
-            image="/images/ukrasne-kapice.webp"
-            title="UKRASNE KAPICE ZA ŠRAFOVE"
-          />
-          <Card
-            image="/images/reduktori-auto-delova.webp"
-            title="Auto delovi"
-          />
-          <Card
-            image="/images/ramovi-za-tablice.webp"
-            title="NOSAČI I RAMOVI ZA TABLICE"
-          />
+          {categories.map(({ title, image }) => (
+            <Card key={title} title={title} image={image} />
+          ))}
         </div>
         <Link href="/products" className="link-red">
           Kompletna ponuda
