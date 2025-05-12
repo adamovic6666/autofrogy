@@ -1,11 +1,22 @@
 import styles from "./Hero.module.css";
 
-const Hero = () => {
+const Hero = ({ title, maxWidth }: { title: string; maxWidth: string }) => {
   return (
     <section className={styles.hero}>
       <div className="container">
-        <h1>proizvodnja plastičnih auto delova</h1>
-        <a className="link-red" href="">
+        <h1
+          style={{
+            maxWidth: maxWidth,
+          }}
+        >
+          {title}
+        </h1>
+        <a
+          className="link-red"
+          href="/pdf/katalog.pdf"
+          target="_blank"
+          download={true}
+        >
           Preuzmi katalog proizvoda
         </a>
       </div>
