@@ -23,4 +23,14 @@ export const categories = [
     image: "/images/ramovi-za-tablice.webp",
     title: "NOSAČI I RAMOVI ZA TABLICE",
   },
+
+  {
+    image: "/images/alati-za-limare.webp",
+    title: "ALATI ZA LIMARE",
+  },
+
+  {
+    image: "/images/ostali-proizvodi.webp",
+    title: "OSTALI PROIZVODI",
+  },
 ];

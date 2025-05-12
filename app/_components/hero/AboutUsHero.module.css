@@ -1,5 +1,5 @@
 .hero {
-  background: url("/images/about-us-hero.webp") no-repeat center center;
+  background: url("/images/about-us-hero.webp") no-repeat right center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,5 +21,6 @@
 @media screen and (min-width: 768px) {
   .hero {
     min-height: 0;
+    background: url("/images/about-us-hero.webp") no-repeat center center;
   }
 }

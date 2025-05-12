@@ -5,6 +5,8 @@
 
 .wellcome p {
   color: #333;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .wellcomeVideo {

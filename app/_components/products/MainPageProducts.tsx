@@ -14,7 +14,7 @@ const MainPageProducts = () => {
           odgovaraju najvišim standardima savremenih vozila.
         </p>
         <div className={styles.grid}>
-          {categories.map(({ title, image }) => (
+          {categories.slice(0, 6).map(({ title, image }) => (
             <Card key={title} title={title} image={image} />
           ))}
         </div>

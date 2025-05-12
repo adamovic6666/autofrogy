@@ -12,6 +12,7 @@ const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [searchIsOpen, setSearchIsOpen] = useState(false);
   const pathname = usePathname();
+  const isMobile = window.innerWidth <= 768;
 
   const handleOpenMenu = () => {
     setMenuIsOpen((prev) => !prev);
@@ -22,12 +23,12 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (menuIsOpen || searchIsOpen) {
+    if ((menuIsOpen || searchIsOpen) && isMobile) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
-  }, [menuIsOpen, searchIsOpen]);
+  }, [menuIsOpen, searchIsOpen, isMobile]);
 
   return (
     <header className={styles.header}>
