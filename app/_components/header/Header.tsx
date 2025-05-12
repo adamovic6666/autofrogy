@@ -36,22 +36,30 @@ const Header = () => {
         <div className={styles.burger} onClick={handleOpenMenu} />
         {!searchIsOpen && (
           <div className={styles.logo}>
-            <Image src={"/images/logo.webp"} alt="logo" fill />
+            <Link href={"/"}>
+              <Image src={"/images/logo.webp"} alt="logo" fill />
+            </Link>
           </div>
         )}
         <nav className={`${styles.nav} ${menuIsOpen ? styles.open : ""}`}>
           <ul>
             {navLinks.map(({ label, href }) => (
               <li key={label}>
-                <Link
-                  onClick={handleOpenMenu}
-                  href={href}
-                  className={
-                    pathname === href ? styles.activeLink : styles.link
-                  }
-                >
-                  {label}
-                </Link>
+                {label.toLowerCase() === "katalog" ? (
+                  <a href="/pdf/katalog.pdf" target="_blank" download={true}>
+                    {label}
+                  </a>
+                ) : (
+                  <Link
+                    onClick={handleOpenMenu}
+                    href={href}
+                    className={
+                      pathname === href ? styles.activeLink : styles.link
+                    }
+                  >
+                    {label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
