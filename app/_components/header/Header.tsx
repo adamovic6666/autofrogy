@@ -12,7 +12,7 @@ const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [searchIsOpen, setSearchIsOpen] = useState(false);
   const pathname = usePathname();
-  const isMobile = window.innerWidth <= 768;
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   const handleOpenMenu = () => {
     setMenuIsOpen((prev) => !prev);
