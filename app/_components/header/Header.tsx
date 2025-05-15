@@ -46,7 +46,11 @@ const Header = () => {
             {navLinks.map(({ label, href }) => (
               <li key={label}>
                 {label.toLowerCase() === "katalog" ? (
-                  <a href="/pdf/katalog.pdf" target="_blank" download={true}>
+                  <a
+                    href="/pdf/AutoFrogyKatalog2025.pdf"
+                    target="_blank"
+                    download={true}
+                  >
                     {label}
                   </a>
                 ) : (
