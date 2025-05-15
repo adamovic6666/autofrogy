@@ -3,7 +3,7 @@ import Header from "./_components/header/Header";
 import Footer from "./_components/footer/Footer";
 import { Open_Sans } from "next/font/google";
 import type { Metadata } from "next";
-import ogImage from "../public/images/og.webp";
+import ogImage from "../public/images/og.png";
 
 const openSans = Open_Sans({
   subsets: ["latin"],

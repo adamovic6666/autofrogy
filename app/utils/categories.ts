@@ -5,19 +5,19 @@ export const categories = [
   },
   {
     image: "/images/kopce-podizaca-stakla.webp",
-    title: "KOPČE PODIZAČA STAKLA",
+    title: "KOPČE PODIZAČA\nSTAKLA",
   },
   {
     image: "/images/fiksatori-za-patosnice.webp",
-    title: "FIKSATORI ZA PATOSNICE",
+    title: "FIKSATORI ` ZA PATOSNICE",
   },
   {
     image: "/images/ukrasne-kapice.webp",
-    title: "UKRASNE KAPICE ZA ŠRAFOVE",
+    title: "UKRASNE KAPICE ` ZA ŠRAFOVE",
   },
   {
     image: "/images/reduktori-auto-delova.webp",
-    title: "Auto delovi",
+    title: "UNIVERZALNI NASTAVCI",
   },
   {
     image: "/images/ramovi-za-tablice.webp",

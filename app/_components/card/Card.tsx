@@ -8,7 +8,15 @@ const Card = ({ image, title }: { image: string; title: string }) => {
         <Image src={image} alt={title} fill />
       </div>
       <div className={styles.title}>
-        <h4>{title}</h4>
+        {title.includes("`") ? (
+          <h4>
+            <span>{title.split("`")[0]}</span>
+            <br />
+            <span>{title.split("`").slice(1).join(" ")}</span>
+          </h4>
+        ) : (
+          <h4>{title}</h4>
+        )}
       </div>
     </article>
   );
