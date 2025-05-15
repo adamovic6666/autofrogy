@@ -6,7 +6,7 @@ import Products from "./_components/products/Products";
 export default function Home() {
   return (
     <>
-      <Hero title="proizvodnja plastičnih auto delova" maxWidth="60rem" />
+      <Hero title="proizvodnja plastičnih auto delova" maxWidth="520px" />
       <Products />
       <AboutUs />
       <Contact />

@@ -26,7 +26,7 @@ const Products = () => {
           ))}
         </div>
         {isMainPage && (
-          <Link href="/products" className="link-red">
+          <Link href="/proizvodi" className="link-red">
             Kompletna ponuda
           </Link>
         )}

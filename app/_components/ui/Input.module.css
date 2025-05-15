@@ -9,13 +9,14 @@
   border: none;
   background-color: var(--white);
   color: #333;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   outline: none;
   border-bottom: 1px solid var(--color-grey);
   padding: 0.8rem 1.6rem;
   transition: all 0.3s;
-  font-family: var(--font-georgia-pro);
+  font-family: var(--font-open-sans);
   border-radius: 2.4rem;
+  font-weight: 300;
 }
 
 .InputWrapper input {
@@ -25,7 +26,7 @@
 .InputError textarea::placeholder,
 .InputWrapper input::placeholder {
   color: #333;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 300;
   font-family: var(--font-open-sans);
 }

@@ -29,10 +29,9 @@ const ProductRange = () => {
               spaceBetween: 16,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 3,
             },
             1024: {
-              slidesPerView: 3,
               spaceBetween: 24,
             },
           }}

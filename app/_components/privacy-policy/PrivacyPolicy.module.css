@@ -64,6 +64,14 @@
   padding: 0;
 }
 
+.webiste {
+  text-decoration: none;
+}
+
+.webiste:hover {
+  text-decoration: underline;
+}
+
 .linkList li {
   margin-bottom: 0.4rem;
 }

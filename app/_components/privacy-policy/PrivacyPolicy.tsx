@@ -14,13 +14,18 @@ const PrivacyPolicy = () => {
           <p>
             SZTR Ugren posvećen je zaštiti vaše privatnosti. Ova Politika
             privatnosti objašnjava kako prikupljamo, koristimo, otkrivamo i
-            štitimo vaše podatke kada posećujete našu veb stranicu,{" "}
-            <a href="https://www.autofrogy.com" className={styles.link}>
+            štitimo vaše podatke kada posećujete našu veb stranicu,&nbsp;
+            <a
+              className={styles.webiste}
+              href="https://www.autofrogy.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               www.autofrogy.com
             </a>
-            (&quot;Sajt&quot;). Molimo vas da pažljivo pročitate ovu politiku
-            privatnosti. Ako se ne slažete sa uslovima ove politike privatnosti,
-            molimo vas da ne pristupate Sajtu.
+            &nbsp;(&quot;Sajt&quot;). Molimo vas da pažljivo pročitate ovu
+            politiku privatnosti. Ako se ne slažete sa uslovima ove politike
+            privatnosti, molimo vas da ne pristupate Sajtu.
           </p>
 
           <div className={styles.policySection}>
@@ -178,8 +183,8 @@ const PrivacyPolicy = () => {
               Cara Dušana 144, 22320 Inđija
               <br />
               Email:{" "}
-              <a href="mailto:office@autofrogy.ooo" className={styles.link}>
-                office@autofrogy.ooo
+              <a href="mailto:office@autofrogy.com" className={styles.link}>
+                office@autofrogy.com
               </a>
               <br />
               Telefon: +381-22-55-11-21
@@ -389,8 +394,8 @@ const PrivacyPolicy = () => {
                 Cara Dušana 144, 22320 Inđija
                 <br />
                 Email:{" "}
-                <a href="mailto:office@autofrogy.ooo" className={styles.link}>
-                  office@autofrogy.ooo
+                <a href="mailto:office@autofrogy.com" className={styles.link}>
+                  office@autofrogy.com
                 </a>
                 <br />
                 Telefon: +381-22-55-11-21

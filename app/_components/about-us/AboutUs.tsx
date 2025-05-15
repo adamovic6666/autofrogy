@@ -20,7 +20,7 @@ const AboutUs = () => {
         <div className={styles.image}>
           <Image src={"/images/about-us.webp"} alt="About Us" fill />
         </div>
-        <Link href="/" className="link-red">
+        <Link href="/o-nama" className="link-red">
           Saznaj više
         </Link>
       </div>

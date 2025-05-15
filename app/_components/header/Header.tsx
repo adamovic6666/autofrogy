@@ -65,8 +65,20 @@ const Header = () => {
           </ul>
 
           <div className={styles.socials}>
-            <Facebook fill="#000" />
-            <YouTube fill="#000" />
+            <a
+              href="https://www.facebook.com/autofrogy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Facebook fill="#000" />
+            </a>
+            <a
+              href="https://www.youtube.com/@autofrogy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <YouTube fill="#000" />
+            </a>
           </div>
 
           <div className={styles.bgImage}></div>
