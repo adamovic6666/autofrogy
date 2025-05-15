@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styles from "./Contact.module.css";
 import Facebook from "@/app/_svg/Facebook";
 import YouTube from "@/app/_svg/YouTube";
