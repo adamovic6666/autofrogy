@@ -10,7 +10,6 @@ const openSans = Open_Sans({
   variable: "--font-open-sans",
   weight: ["300", "400", "700", "800"],
 });
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://autofrogy.vercel.app/"),
   applicationName: "Auto Frogy",
