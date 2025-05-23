@@ -3,26 +3,46 @@
 import Link from "next/link";
 import Card from "../card/Card";
 import styles from "./Products.module.css";
-import { categories } from "@/app/utils/categories";
 import { usePathname } from "next/navigation";
+import { Product } from "@/app/_types";
 
-const Products = () => {
+const Products = ({
+  allProducts,
+  parentDetails,
+}: {
+  allProducts: Product[];
+  parentDetails?: { title: string; description: string };
+}) => {
   const pathname = usePathname();
   const isMainPage = pathname === "/";
-  const products = isMainPage ? categories.slice(0, 6) : categories;
+  const products = isMainPage ? allProducts?.slice(0, 6) : allProducts;
+  const isProductPage = allProducts?.some((products) =>
+    products.alias.includes("/proizvod/")
+  );
+
+  const description = isMainPage
+    ? "Sa više od 20 godina iskustva u proizvodnji, izgradili smo reputaciju pouzdanog proizvođača visokokvalitetnih plastičnih auto delova koji odgovaraju najvišim standardima savremenih vozila."
+    : "Kompletna ponuda naših proizvoda na jednom mestu. Praktično organizovano, jednostavno za pretragu.";
 
   return (
     <section className={styles.products}>
       <div className="container-small">
-        <h2>proizvodni asortiman</h2>
-        <p className={styles.description}>
-          Sa više od 20 godina iskustva u proizvodnji, izgradili smo reputaciju
-          pouzdanog proizvođača visokokvalitetnih plastičnih auto delova koji
-          odgovaraju najvišim standardima savremenih vozila.
-        </p>
+        {isMainPage && <h2>proizvodni asortiman</h2>}
+        {parentDetails?.title && !isMainPage && <h2>{parentDetails?.title}</h2>}
+        {!parentDetails?.description && !isProductPage && (
+          <p className={styles.description}>{description}</p>
+        )}
+        {parentDetails?.description && (
+          <p dangerouslySetInnerHTML={{ __html: parentDetails?.description }} />
+        )}
         <div className={styles.grid}>
-          {products.map(({ title, image }) => (
-            <Card key={title} title={title} image={image} />
+          {products.map((product: Product) => (
+            <Card
+              key={product.id || product.alias}
+              name={(product?.title || product?.name) as string}
+              image={product.image}
+              alias={product.alias}
+            />
           ))}
         </div>
         {isMainPage && (

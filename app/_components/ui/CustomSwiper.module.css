@@ -1,24 +1,23 @@
-.productRange {
-  padding: 6.4rem 0 2.4rem;
+.sliderWrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
-.productRange > p {
-  margin-bottom: 4rem;
-}
-.navNext,
-.navPrev {
+.navigationButtons {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  z-index: 1;
+  top: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.6rem;
 }
 
-.navPrev {
-  left: -4rem;
-}
-.navNext {
-  right: -4rem;
+.navigationButtons button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {

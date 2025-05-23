@@ -81,8 +81,8 @@
   background-size: 2.4rem;
   border: none;
   border-radius: 2.4rem;
-  overflow: hidden;
   display: none;
+  position: relative;
 }
 
 .search input {

@@ -1,7 +1,8 @@
+import { Product } from "@/app/_types";
 import ProductRange from "../about-us/ProductRange";
 import styles from "./Wellcome.module.css";
 
-const Wellcome = () => {
+const Wellcome = ({ allProducts }: { allProducts: Product[] }) => {
   return (
     <section className={styles.wellcome}>
       <div className="container-small">
@@ -39,7 +40,7 @@ const Wellcome = () => {
             allowFullScreen
           ></iframe>
         </div>
-        <ProductRange />
+        <ProductRange allProducts={allProducts} />
       </div>
     </section>
   );

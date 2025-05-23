@@ -4,6 +4,7 @@ import Footer from "./_components/footer/Footer";
 import { Open_Sans } from "next/font/google";
 import type { Metadata } from "next";
 import ogImage from "../public/images/og.png";
+import GoogleAnalytics from "./_components/google-analytics/GoogleAnalytics";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -49,6 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={openSans.variable}>
+        <GoogleAnalytics />
         <Header />
         <main>{children}</main>
         <Footer />

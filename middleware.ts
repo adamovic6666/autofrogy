@@ -1,8 +1,12 @@
 import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export function middleware(_: Request) {
+export function middleware(request: NextRequest) {
   // Example middleware logic
-  return NextResponse.next();
+
+  const headers = new Headers(request.headers);
+  headers.set("x-current-path", request.nextUrl.pathname);
+  return NextResponse.next({ headers });
 }
 
 export const config = {

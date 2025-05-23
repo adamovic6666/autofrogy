@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.link {
+  text-decoration: none;
+}
+
 .card:hover .image img {
   transform: scale(1.05);
 }
@@ -21,6 +25,11 @@
   max-height: 16.4rem;
   position: relative;
   overflow: hidden;
+}
+
+.imageBig {
+  aspect-ratio: 1 / 1;
+  max-height: 20rem;
 }
 
 .image img {

@@ -7,12 +7,26 @@ import YouTube from "@/app/_svg/YouTube";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/app/utils/nav-links";
+import SearchDropdown from "@/app/_components/ui/SearchDropdown";
 
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [searchIsOpen, setSearchIsOpen] = useState(false);
   const pathname = usePathname();
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
   const handleOpenMenu = () => {
     setMenuIsOpen((prev) => !prev);
@@ -20,6 +34,10 @@ const Header = () => {
 
   const handleOpenSearch = () => {
     setSearchIsOpen((prev) => !prev);
+  };
+
+  const handleCloseSearch = () => {
+    setSearchIsOpen(false);
   };
 
   useEffect(() => {
@@ -88,11 +106,14 @@ const Header = () => {
           <div className={styles.bgImage}></div>
         </nav>
         <div className={styles.search}>
-          <input type="text" placeholder="Pretraži..." />
+          <SearchDropdown 
+            placeholder="Pretraži..." 
+            className={styles.headerSearch} 
+          />
         </div>
         {!searchIsOpen && (
           <div className={styles.mobileSearch} onClick={handleOpenSearch} />
-        )}{" "}
+        )}
       </div>
 
       {/* Mobile Search Overlay */}
@@ -106,7 +127,11 @@ const Header = () => {
             ✕
           </div>
           <div className={styles.mobileSearchInput}>
-            <input type="text" placeholder="Pretraži..." />
+            <SearchDropdown
+              placeholder="Pretraži..."
+              isMobile={true}
+              onClose={handleCloseSearch}
+            />
           </div>
         </div>
       </div>

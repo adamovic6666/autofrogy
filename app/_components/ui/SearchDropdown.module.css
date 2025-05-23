@@ -1,0 +1,135 @@
+.searchContainer {
+  position: relative;
+  width: 100%;
+}
+
+.searchInput {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.searchInput input:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 0 0 0 1px rgba(180, 35, 35, 0.1);
+}
+
+.searchButton {
+  position: absolute;
+  right: 1.6rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--red);
+}
+
+.resultsDropdown {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  width: 100%;
+  background: var(--white);
+  border-radius: 0.8rem;
+  box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  max-height: 40rem;
+  overflow-y: auto;
+}
+
+.resultsDropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resultsDropdown li {
+  padding: 1.2rem 1.6rem;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: background-color 0.2s;
+}
+
+.resultsDropdown li:last-child {
+  border-bottom: none;
+}
+
+.resultsDropdown li:hover,
+.resultsDropdown li.selected {
+  background-color: #f9f9f9;
+}
+
+.resultImage {
+  width: 4.8rem;
+  height: 4.8rem;
+  min-width: 4.8rem;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
+.resultImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resultContent {
+  flex: 1;
+}
+
+.resultContent h4 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.resultContent p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #666;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.category {
+  display: inline-block;
+  font-size: 1rem;
+  background-color: #f0f0f0;
+  color: #666;
+  padding: 0.2rem 0.8rem;
+  border-radius: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.loading,
+.noResults,
+.minChars {
+  padding: 1.6rem;
+  text-align: center;
+  color: #666;
+  font-size: 1.4rem;
+}
+
+.viewAll {
+  text-align: center;
+  font-weight: 600;
+  color: var(--red);
+}
+
+@media (max-width: 768px) {
+  .resultsDropdown {
+    max-height: 32rem;
+  }
+}

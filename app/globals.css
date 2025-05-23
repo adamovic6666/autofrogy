@@ -24,6 +24,7 @@ body {
   overflow-x: hidden;
   font-family: var(--font-open-sans);
   position: relative;
+  background-color: var(--gray-light);
 }
 
 h1,
@@ -46,6 +47,7 @@ h6 {
   font-family: var(--font-open-sans);
 }
 
+.container-medium,
 .container-small,
 .container {
   margin: 0 auto;
@@ -54,6 +56,10 @@ h6 {
 
 .container {
   max-width: 112rem;
+}
+
+.container-medium {
+  max-width: 96rem;
 }
 
 .container-small {
