@@ -51,7 +51,7 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
             descriptionRef.current.scrollHeight;
           const deduction = !!productDetails.photo_gallery.thumb.length
             ? -18
-            : -32;
+            : 16;
           // Calculate available space for description
           const availableHeight =
             leftSideHeight - (rightSideWithoutDescription - deduction);
@@ -87,15 +87,15 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
             {isNew && <span className={styles.newBadge}>Novo</span>}
             <Image src={mainImage} alt="Product main view" fill />
           </div>
-          <div className={styles.additionalImages}>
-            {productDetails?.photo_gallery?.thumb && (
+          {!!productDetails?.photo_gallery?.thumb.length && (
+            <div className={styles.additionalImages}>
               <CustomSwiper
                 images={productDetails.photo_gallery}
                 onImageClick={openGallery}
                 id="product-details-swiper"
               />
-            )}
-          </div>
+            </div>
+          )}
         </div>
         <div className={styles.details} ref={rightSide}>
           <h1>{productDetails.title}</h1>
