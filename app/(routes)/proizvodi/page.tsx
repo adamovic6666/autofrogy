@@ -15,7 +15,7 @@ const page = async () => {
 
   return (
     <>
-      <Hero maxWidth="40rem" rotate={true} title="PROIZVODNI ASORTIMAN" />
+      <Hero maxWidth="50vw" rotate={true} title="PROIZVODNI ASORTIMAN" />
       <Products allProducts={products} />
       <Contact />
     </>

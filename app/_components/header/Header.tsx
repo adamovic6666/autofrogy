@@ -64,11 +64,7 @@ const Header = () => {
             {navLinks.map(({ label, href }) => (
               <li key={label}>
                 {label.toLowerCase() === "katalog" ? (
-                  <a
-                    href="/pdf/AutoFrogyKatalog2025.pdf"
-                    target="_blank"
-                    download={true}
-                  >
+                  <a href="/pdf/AutoFrogyKatalog2025.pdf" target="_blank">
                     {label}
                   </a>
                 ) : (
@@ -106,9 +102,9 @@ const Header = () => {
           <div className={styles.bgImage}></div>
         </nav>
         <div className={styles.search}>
-          <SearchDropdown 
-            placeholder="Pretraži..." 
-            className={styles.headerSearch} 
+          <SearchDropdown
+            placeholder="Pretraži..."
+            className={styles.headerSearch}
           />
         </div>
         {!searchIsOpen && (

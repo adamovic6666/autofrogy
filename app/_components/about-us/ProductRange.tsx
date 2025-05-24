@@ -7,8 +7,9 @@ const ProductRange = ({ allProducts }: { allProducts: Product[] }) => {
     <div className={`${styles.productRange} container-small`}>
       <h2>PROIZVODNI ASORTIMAN</h2>
       <p>
-        Naši plastični auto delovi izrađeni su prema najvišim industrijskim
-        standardima, sa fokusom na preciznost, izdržljivost i pouzdanost.
+        Naši plastični auto delovi izrađeni su prema najvišim svetskim
+        industrijskim standardima, sa fokusom na preciznost, izdržljivost i
+        pouzdanost.
       </p>
       <CustomSwiper products={allProducts} />
     </div>

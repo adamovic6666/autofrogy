@@ -4,7 +4,9 @@
 
 .details h1 {
   text-align: start;
+  text-transform: unset;
 }
+
 .details > div {
   display: flex;
   flex-direction: column;
@@ -25,10 +27,21 @@
 
 .productCode {
   margin-bottom: 2.4rem;
+  color: var(--gray-dark);
+  font-size: 1.4rem;
+}
+
+.productCode span:nth-of-type(2) {
+  opacity: 0.75;
 }
 
 .productCode span {
   margin-right: 1.2rem;
+}
+
+.productCode span:nth-of-type(1) {
+  font-weight: 500;
+  font-size: 1.8rem;
 }
 
 .images {
@@ -51,20 +64,25 @@
 .additionalImages {
   display: flex;
   gap: 1.2rem;
+  width: 100%;
+  margin: 0.8rem 0 3.2rem;
 }
 
-.additionalImages > div {
-  max-width: 33%;
+.additionalImages :global(.swiper) {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  overflow: visible;
+  overflow: hidden;
+}
+
+.additionalImages :global(.swiper-slide) {
   background-color: var(--white);
-  border-radius: 1.6rem;
+  border-radius: 0.8rem;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-.additionalImages > div img {
+.additionalImages :global(.swiper-slide) img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -77,6 +95,7 @@
   transition: transform 0.3s ease;
   aspect-ratio: 1 / 1;
   position: relative;
+  cursor: pointer;
 }
 
 .thumb {
@@ -86,22 +105,48 @@
 
 .description span {
   scrollbar-width: thin;
-  scrollbar-color: var(--red) #f1f1f1;
+  scrollbar-color: #ccc #ffffff6b;
   transition: max-height 0.3s ease;
 }
 
-.description::-webkit-scrollbar {
-  width: 8px;
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
 }
 
-.description::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
+.newBadge {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background-color: var(--red);
+  color: var(--white);
+  padding: 0.6rem 1.6rem;
+  border-radius: 1.6rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 1;
 }
 
-.description::-webkit-scrollbar-thumb {
-  background: var(--red);
-  border-radius: 10px;
+.videoThumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 1.6rem;
+  overflow: hidden;
+}
+
+.videoThumb svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
 }
 
 @media screen and (min-width: 768px) {
@@ -120,5 +165,9 @@
 
   .description {
     padding-right: 1.6rem;
+  }
+
+  .descriptionContainer {
+    gap: 1.6rem;
   }
 }

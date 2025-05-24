@@ -1,5 +1,12 @@
 .products {
-  padding: 6.4rem 0;
+  padding: 6.4rem 0 8rem;
+}
+.smallPadding {
+  padding: 10.4rem 0 8rem;
+}
+
+.smallPadding h2 {
+  margin-bottom: 3.2rem;
 }
 
 .products > div {
@@ -7,6 +14,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.products > div > p {
+  margin-bottom: 3.2rem;
+  text-align: center;
 }
 
 .description {
@@ -18,8 +30,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.6rem;
-  padding-top: 3.2rem;
   width: 100%;
+  margin-top: 0.8rem;
 }
 
 .grid + a {
@@ -34,5 +46,13 @@
   .grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 2.4rem;
+  }
+
+  .smallPadding {
+    padding: 12rem 0 6.4rem;
+  }
+
+  .grid {
+    margin-top: 1.6rem;
   }
 }

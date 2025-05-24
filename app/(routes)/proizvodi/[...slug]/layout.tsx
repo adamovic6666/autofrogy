@@ -1,4 +1,3 @@
-import Breadcrumbs from "@/app/_components/breadcrumbs/Breadcrumbs";
 import Contact from "@/app/_components/contact/Contact";
 
 export default function Layout({
@@ -8,7 +7,6 @@ export default function Layout({
 }>) {
   return (
     <>
-      <Breadcrumbs />
       {children}
       <Contact />
     </>

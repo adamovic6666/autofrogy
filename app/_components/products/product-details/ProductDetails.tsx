@@ -2,14 +2,20 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./ProductDetails.module.css";
 import LightGallery from "@/app/_components/ui/LightGallery";
+import CustomSwiper from "@/app/_components/ui/CustomSwiper";
 import Image from "next/image";
 import { ProductDetailsProps } from "@/app/_types";
 
 const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
   const mainImage = process.env.NEXT_PUBLIC_API_URL + productDetails.main_photo;
-
+  const isNew = productDetails.is_new;
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // Create an array that includes the main image plus the gallery images
+  const allGalleryImages = [
+    productDetails.main_photo,
+    ...productDetails.photo_gallery.orig,
+  ];
   const leftSide = useRef<HTMLDivElement>(null);
   const rightSide = useRef<HTMLDivElement>(null);
   const descriptionRef = useRef<HTMLDivElement>(null);
@@ -17,8 +23,16 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
     null
   );
 
+  // For opening the additional images
   const openGallery = (index: number) => {
-    setCurrentImageIndex(index);
+    // Add 1 to account for the main image at index 0
+    setCurrentImageIndex(index + 1);
+    setIsGalleryOpen(true);
+  };
+
+  // Special handler just for the main image
+  const openMainImage = () => {
+    setCurrentImageIndex(0);
     setIsGalleryOpen(true);
   };
 
@@ -35,13 +49,15 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
           const rightSideWithoutDescription =
             rightSide.current.clientHeight -
             descriptionRef.current.scrollHeight;
-          const deduction = !!productDetails.photo_gallery.thumb ? -6 : 0;
+          const deduction = !!productDetails.photo_gallery.thumb.length
+            ? -18
+            : -32;
           // Calculate available space for description
           const availableHeight =
             leftSideHeight - (rightSideWithoutDescription - deduction);
 
           // Set max height for description (minimum 100px to ensure some content is visible)
-          const newHeight = Math.max(availableHeight, 50);
+          const newHeight = Math.max(availableHeight, 30);
           setDescriptionHeight(newHeight);
         }
       } else {
@@ -61,87 +77,73 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
     <section className={styles.productDetails}>
       <div className="container-small">
         <div className={styles.images} ref={leftSide}>
-          <div className={styles.mainImage}>
+          <div
+            className={styles.mainImage}
+            onClick={openMainImage}
+            role="button"
+            tabIndex={0}
+            aria-label="View main product image"
+          >
+            {isNew && <span className={styles.newBadge}>Novo</span>}
             <Image src={mainImage} alt="Product main view" fill />
           </div>
           <div className={styles.additionalImages}>
-            {productDetails?.photo_gallery?.thumb
-              ?.slice(0, 3)
-              .map((media, index) => {
-                const origMedia = productDetails.photo_gallery.orig[index];
-                const isYoutube =
-                  typeof origMedia === "string" &&
-                  origMedia.includes("youtube.com");
-
-                return (
-                  <div
-                    key={index}
-                    role="button"
-                    tabIndex={isYoutube ? -1 : 0}
-                    aria-label={`View product media ${index + 2}`}
-                    className={styles.thumb}
-                    onClick={() => openGallery(index)}
-                    style={isYoutube ? { opacity: 0.7 } : {}}
-                  >
-                    {isYoutube ? (
-                      <div className={styles.videoThumb}>
-                        {/* Poster image for YouTube video */}
-                        <Image
-                          src={`https://img.youtube.com/vi/${
-                            origMedia.split("v=")[1]?.split("&")[0]
-                          }/hqdefault.jpg`}
-                          alt={`YouTube video thumbnail ${index + 2}`}
-                          fill
-                          sizes="100vw"
-                        />
-                      </div>
-                    ) : (
-                      <Image
-                        src={process.env.NEXT_PUBLIC_API_URL + media}
-                        alt={`Product view ${index + 2}`}
-                        fill
-                      />
-                    )}
-                  </div>
-                );
-              })}
+            {productDetails?.photo_gallery?.thumb && (
+              <CustomSwiper
+                images={productDetails.photo_gallery}
+                onImageClick={openGallery}
+                id="product-details-swiper"
+              />
+            )}
           </div>
         </div>
         <div className={styles.details} ref={rightSide}>
           <h1>{productDetails.title}</h1>
-          <p className={styles.productCode}>
-            <span className="link-red">{productDetails.product_code}</span>Šifra
-            proizvoda
-          </p>
-          {productDetails.description && (
-            <div className={styles.description} ref={descriptionRef}>
-              <p className={styles.bold}>Opis:</p>
-              <span
-                style={{
-                  maxHeight: `${descriptionHeight}px`,
-                  overflowY: "auto",
-                }}
-                dangerouslySetInnerHTML={{ __html: productDetails.description }}
-              />
-            </div>
+          {productDetails.product_code && (
+            <p className={styles.productCode}>
+              <span className="link-red">{productDetails.product_code}</span>
+              <span>Šifra proizvoda</span>
+            </p>
           )}
-          {productDetails.tip_vozila && (
-            <div>
-              <p className={styles.bold}>Model i marka vozila:</p>
-              <p>{productDetails.tip_vozila}</p>
-            </div>
-          )}
-          {productDetails.fabric_number && (
-            <div>
-              <p className={styles.bold}>Fabrički broj:</p>
-              <p>{productDetails.fabric_number}</p>
-            </div>
-          )}
+          <div
+            ref={descriptionRef}
+            className={styles.descriptionContainer}
+            style={
+              productDetails.description
+                ? {
+                    maxHeight: `${descriptionHeight}px`,
+                    overflowY: "auto",
+                  }
+                : undefined
+            }
+          >
+            {productDetails.description && (
+              <div className={styles.description}>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: productDetails.description,
+                  }}
+                />
+              </div>
+            )}
+            {productDetails.tip_vozila && (
+              <div>
+                <p className={styles.bold}>Marka i model vozila:</p>
+                <p>{productDetails.tip_vozila}</p>
+              </div>
+            )}
+            {productDetails.fabric_number && (
+              <div>
+                <p className={styles.bold}>Fabrički broj:</p>
+                <p>{productDetails.fabric_number}</p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
       <LightGallery
-        media={productDetails.photo_gallery.orig}
+        media={allGalleryImages}
         isOpen={isGalleryOpen}
         currentIndex={currentImageIndex}
         onClose={closeGallery}

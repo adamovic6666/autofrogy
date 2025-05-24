@@ -9,9 +9,11 @@ import { Product } from "@/app/_types";
 const Products = ({
   allProducts,
   parentDetails,
+  smallPadding,
 }: {
   allProducts: Product[];
   parentDetails?: { title: string; description: string };
+  smallPadding?: boolean;
 }) => {
   const pathname = usePathname();
   const isMainPage = pathname === "/";
@@ -25,7 +27,11 @@ const Products = ({
     : "Kompletna ponuda naših proizvoda na jednom mestu. Praktično organizovano, jednostavno za pretragu.";
 
   return (
-    <section className={styles.products}>
+    <section
+      className={` ${smallPadding ? styles.smallPadding : ""} ${
+        styles.products
+      }`}
+    >
       <div className="container-small">
         {isMainPage && <h2>proizvodni asortiman</h2>}
         {parentDetails?.title && !isMainPage && <h2>{parentDetails?.title}</h2>}

@@ -101,7 +101,7 @@ h2 {
 }
 
 h4 {
-  font-size: clamp(1.35rem, 0.8vw + 1rem, 1.9rem);
+  font-size: clamp(1.3rem, 0.8vw + 1rem, 1.8rem);
   line-height: 1.1;
 }
 
@@ -132,6 +132,28 @@ h5 {
 .swiper-button-disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2.4rem;
+}
+
+td,
+th {
+  padding: 1.2rem;
+  border: 1px solid var(--gray-medium);
+  text-align: left;
+}
+td {
+  font-size: 1.4rem;
+  color: var(--gray-dark);
+}
+th {
+  font-weight: 600;
+  color: var(--gray-ultra-dark);
+  font-size: 1.6rem;
 }
 
 @media (min-width: 112rem) {

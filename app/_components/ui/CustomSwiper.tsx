@@ -8,77 +8,180 @@ import "swiper/css/navigation";
 import styles from "./CustomSwiper.module.css";
 import { Product } from "@/app/_types";
 import Card from "../card/Card";
+import Image from "next/image";
+import PlayIcon from "@/app/_svg/PlayIcon";
 
-const CustomSwiper = ({ products }: { products: Product[] }) => {
+type CustomSwiperProps = {
+  products?: Product[];
+  images?: {
+    thumb: string[];
+    orig: string[];
+  };
+  onImageClick?: (index: number) => void;
+  imageBasePath?: string;
+  id?: string;
+};
+
+const CustomSwiper = ({
+  products,
+  images,
+  onImageClick,
+  imageBasePath = process.env.NEXT_PUBLIC_API_URL,
+  id = "swiper-" + Math.random().toString(36).substring(2, 9),
+}: CustomSwiperProps) => {
+  const showArrows =
+    (products && products.length > 3) || (images && images.thumb.length > 3);
+
   return (
     <div className={styles.sliderWrapper}>
       <Swiper
-        navigation={{ nextEl: ".arrow-left", prevEl: ".arrow-right" }}
+        navigation={{
+          nextEl: `.arrow-left-${id}`,
+          prevEl: `.arrow-right-${id}`,
+        }}
         autoHeight={true}
         modules={[Navigation]}
         spaceBetween={24}
         slidesPerView={3}
         breakpoints={{
           320: {
-            slidesPerView: 2,
+            slidesPerView: images ? 3 : 2,
             spaceBetween: 16,
           },
           768: {
             slidesPerView: 3,
           },
           1024: {
-            spaceBetween: 24,
+            spaceBetween: images ? 16 : 24,
           },
         }}
       >
-        {products.map((product) => (
-          <SwiperSlide key={product.name}>
-            <Card
-              image={product.image}
-              name={product.name || product.title || "no name"}
-              alias={product.alias}
-            />
-          </SwiperSlide>
-        ))}
+        {products &&
+          products.map((product) => (
+            <SwiperSlide key={product.name}>
+              <Card
+                image={product.image}
+                name={product.name || product.title || "no name"}
+                alias={product.alias}
+              />
+            </SwiperSlide>
+          ))}
+
+        {images &&
+          images.thumb.map((media, index) => {
+            const origMedia = images.orig[index];
+            const isYoutube =
+              typeof origMedia === "string" &&
+              origMedia.includes("youtube.com");
+
+            return (
+              <SwiperSlide key={index}>
+                <div
+                  role="button"
+                  tabIndex={isYoutube ? -1 : 0}
+                  aria-label={`View product media ${index + 2}`}
+                  className={`${styles.imageSlide} ${
+                    isYoutube ? styles.youtubeSlide : ""
+                  }`}
+                  style={{
+                    position: "relative",
+                    paddingBottom: "100%" /* Creates 1:1 aspect ratio */,
+                    height: "0",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => onImageClick && onImageClick(index)}
+                >
+                  {isYoutube ? (
+                    <div
+                      style={{
+                        position: "absolute",
+                        width: "100%",
+                        height: "100%",
+                        top: 0,
+                        left: 0,
+                      }}
+                    >
+                      <Image
+                        src={`https://img.youtube.com/vi/${
+                          origMedia.split("v=")[1]?.split("&")[0]
+                        }/hqdefault.jpg`}
+                        alt={`YouTube video thumbnail ${index + 2}`}
+                        fill
+                        sizes="100vw"
+                        style={{ objectFit: "cover" }}
+                      />
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: "50%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                        }}
+                      >
+                        <PlayIcon />
+                      </div>
+                    </div>
+                  ) : (
+                    <Image
+                      src={imageBasePath + media}
+                      alt={`Product view ${index + 2}`}
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  )}
+                </div>
+              </SwiperSlide>
+            );
+          })}
       </Swiper>
-      <div className={styles.navigationButtons}>
-        <button className={styles.arrowLeft}>
-          <svg
-            className="arrow-left"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+      {showArrows && (
+        <div className={styles.navigationButtons}>
+          <button
+            className={`${styles.arrowLeft} ${
+              images ? styles.arrowLeftImages : ""
+            }`}
           >
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="#3c3c3c"
-              strokeWidth="5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
-        <button className={styles.arrowRight}>
-          <svg
-            className="arrow-right"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            <svg
+              className={`arrow-left-${id}`}
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 18L9 12L15 6"
+                stroke="#3c3c3c"
+                strokeWidth="5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            className={`${styles.arrowRight} ${
+              images ? styles.arrowRightImages : ""
+            }`}
           >
-            <path
-              d="M9 6L15 12L9 18"
-              stroke="#3c3c3c"
-              strokeWidth="5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
-      </div>
+            <svg
+              className={`arrow-right-${id}`}
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 6L15 12L9 18"
+                stroke="#3c3c3c"
+                strokeWidth="5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      )}
     </div>
   );
 };

@@ -31,7 +31,11 @@ const page = async () => {
 
   return (
     <>
-      <Products allProducts={products || []} parentDetails={parent ?? {}} />
+      <Products
+        allProducts={products || []}
+        parentDetails={parent ?? {}}
+        smallPadding
+      />
     </>
   );
 };

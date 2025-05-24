@@ -37,7 +37,7 @@ const Contact = () => {
             >
               <YouTube /> YouTube
             </a>
-            <a href="/pdf/SZTR-Ugren.pdf" target="_blank" download={true}>
+            <a href="/pdf/SZTR-Ugren.pdf" target="_blank">
               Podaci o preduzeću{" "}
             </a>
           </div>
