@@ -46,10 +46,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const productsData = await productsRes.json();
 
     // Generate product URLs - handle both array and object responses
+    type Product = { url?: string; alias?: string };
     const products = Array.isArray(productsData) ? productsData : productsData?.products || [];
     const productRoutes: MetadataRoute.Sitemap = products
-      .filter((product: any) => product.url || product.alias)
-      .map((product: any) => ({
+      .filter((product: Product) => product.url || product.alias)
+      .map((product: Product) => ({
         url: `${baseUrl}${product.url || product.alias}`,
         lastModified: new Date(),
         changeFrequency: "weekly" as const,

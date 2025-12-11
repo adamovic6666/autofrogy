@@ -88,7 +88,7 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [descriptionRef, rightSide, leftSide]);
+  }, [descriptionRef, rightSide, leftSide, productDetails.photo_gallery.thumb.length]);
 
   return (
     <section className={styles.productDetails}>
