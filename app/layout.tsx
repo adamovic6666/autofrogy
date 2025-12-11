@@ -54,6 +54,7 @@ export default function RootLayout({
   return (
     <html lang="sr">
       <head>
+        <meta name="google-site-verification" content="Szvnp6mCIlU4IrY9yJpR5cfJMOpgXF6i4tzx2blgg-Y" />
         <StructuredData />
       </head>
       <body className={openSans.variable}>
