@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Auto Frogy | O nama",
   description:
     "Auto Frogy - preko 20 godina proizvodnje plastičnih auto delova u Srbiji. Lider u prodaji auto kopči u Srbiji i regionu.",
+  alternates: {
+    canonical: "/o-nama",
+  },
 };
 const page = async () => {
   const res = await fetch(

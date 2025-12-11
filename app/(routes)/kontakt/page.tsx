@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Auto Frogy | Kontaktirajte nas",
   description:
     "Kontaktirajte Auto Frogy tim – tu smo da odgovorimo na sva Vaša pitanja.",
+  alternates: {
+    canonical: "/kontakt",
+  },
 };
 const page = () => {
   return (

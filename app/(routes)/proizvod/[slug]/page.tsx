@@ -1,6 +1,7 @@
 import Contact from "@/app/_components/contact/Contact";
 import ProductDetails from "@/app/_components/products/product-details/ProductDetails";
 import SimilarProducts from "@/app/_components/products/similar-products/SimilarProducts";
+import ProductStructuredData from "@/app/_components/structured-data/ProductStructuredData";
 import { ProductDetail } from "@/app/_types";
 import { cache } from "react";
 import type { Metadata } from "next";
@@ -38,6 +39,9 @@ export async function generateMetadata({
     description:
       metatag?.description ??
       "Najveći izbor auto kopči, kopči podizača stakla, fiksatora za patosnice, nosača za tablice, ramova za tablice i ostale auto opreme. Pronađite sve na jednom mestu!",
+    alternates: {
+      canonical: `/proizvod/${slug}`,
+    },
   };
 }
 
@@ -59,6 +63,7 @@ const Page = async ({ params }: PageProps) => {
 
   return (
     <>
+      <ProductStructuredData product={product} slug={slug} />
       <ProductDetails productDetails={product} />
       <SimilarProducts similarProducts={product?.similar_products || []} />
       <Contact />

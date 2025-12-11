@@ -29,6 +29,9 @@ export async function generateMetadata({
     description:
       parent?.metatags?.description ??
       "Najveći izbor auto kopči, kopči podizača stakla, fiksatora za patosnice, nosača za tablice, ramova za tablice i ostale auto opreme. Pronađite sve na jednom mestu!",
+    alternates: {
+      canonical: pathname,
+    },
   };
 }
 
@@ -43,13 +46,11 @@ const page = async ({ params }: { params?: Promise<{ slug: string[] }> }) => {
   });
 
   return (
-    <>
-      <Products
-        allProducts={sortedByNewField || []}
-        parentDetails={parent ?? {}}
-        smallPadding
-      />
-    </>
+    <Products
+      allProducts={sortedByNewField || []}
+      parentDetails={parent ?? {}}
+      smallPadding
+    />
   );
 };
 

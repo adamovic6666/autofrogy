@@ -5,6 +5,7 @@ import { Open_Sans } from "next/font/google";
 import type { Metadata } from "next";
 import ogImage from "../public/images/og.png";
 import GoogleAnalytics from "./_components/google-analytics/GoogleAnalytics";
+import StructuredData from "./_components/structured-data/StructuredData";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -16,7 +17,10 @@ export const metadata: Metadata = {
   applicationName: "Auto Frogy",
   title: "Auto Frogy | Proizvodnja i prodaja plastičnih auto delova",
   description:
-    "Preko 20 godina iskustva u proizvodnji plastičnih auto delova. Najveći izbor auto kopči i žabica, kopči podizača stakla, fiksatora za patosnice, nosača i ramova za tablice, alata i ostale opreme.",
+    "Preko 20 godina iskustva u proizvodnji plastičnih auto delova. Největší izbor auto kopči i žabica, kopči podizača stakla, fiksatora za patosnice, nosača i ramova za tablice, alata i ostale opreme.",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [
       { url: "/images/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -48,7 +52,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="sr">
+      <head>
+        <StructuredData />
+      </head>
       <body className={openSans.variable}>
         <GoogleAnalytics />
         <Header />
