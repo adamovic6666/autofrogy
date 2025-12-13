@@ -18,6 +18,22 @@ export const metadata: Metadata = {
   title: "Auto Frogy | Proizvodnja i prodaja plastičnih auto delova",
   description:
     "Preko 20 godina iskustva u proizvodnji plastičnih auto delova. Největší izbor auto kopči i žabica, kopči podizača stakla, fiksatora za patosnice, nosača i ramova za tablice, alata i ostale opreme.",
+  keywords: [
+    "Auto kopče",
+    "Auto žabice",
+    "Fiksatori za patosnice",
+    "Kopče za patosnice",
+    "Žabice za patosnice",
+    "Kopče podizača stakla",
+    "Ukrasne kapice za šrafove",
+    "Nosači za tablice",
+    "Skriveni nosači za tablice",
+    "Ramovi za tablice",
+    "T-račve",
+    "Reduciri creva",
+    "Nastavci creva",
+    "Alati za auto limare",
+  ],
   alternates: {
     canonical: "/",
   },
