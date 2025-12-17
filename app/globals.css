@@ -162,9 +162,13 @@ th {
   font-size: 1.6rem;
 }
 
-@media (min-width: 112rem) {
+@media (min-width: 1024px) {
   .container-small,
   .container {
     padding: 0;
+  }
+
+  h1 {
+    margin-bottom: 3.2rem;
   }
 }
