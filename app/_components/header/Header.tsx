@@ -146,7 +146,7 @@ const Header = () => {
                       </li>
                       <li>
                         <Link href="/proizvodi/nosaci-i-ramovi-za-tablice">
-                          Nosaci i ramovi za tablice
+                          Nosači i ramovi za tablice
                         </Link>
                       </li>
                       <li>
