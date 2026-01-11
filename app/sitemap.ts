@@ -43,6 +43,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       `${process.env.BASE_URL}/api/v1/list-products?data=all&cc=${process.env.API_HASH}`,
       { next: { revalidate: 86400 } } // Revalidate once per day
     );
+
+    // Check if response is OK and content-type is JSON
+    if (!productsRes.ok) {
+      console.error(
+        `API returned status ${productsRes.status}: ${productsRes.statusText}`
+      );
+      return staticRoutes;
+    }
+
+    const contentType = productsRes.headers.get("content-type");
+    if (!contentType?.includes("application/json")) {
+      console.error(
+        `API returned non-JSON content-type: ${contentType ?? "none"}`
+      );
+      return staticRoutes;
+    }
+
     const productsData = await productsRes.json();
 
     // Generate product URLs - handle both array and object responses
