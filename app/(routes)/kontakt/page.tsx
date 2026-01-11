@@ -3,9 +3,9 @@ import ContactForm from "@/app/_components/forms/ContactForm";
 import AboutUsHero from "@/app/_components/hero/AboutUsHero";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Auto Frogy | Kontaktirajte nas",
+  title: "Kontaktirajte nas | Auto Frogy",
   description:
-    "Kontaktirajte Auto Frogy tim – tu smo da odgovorimo na sva Vaša pitanja.",
+    "Imate pitanja o auto kopčama i auto žabicama? Kontaktirajte naš tim i saznajte više o našim proizvodima i uslugama",
   alternates: {
     canonical: "/kontakt",
   },

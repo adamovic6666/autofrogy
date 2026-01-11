@@ -24,8 +24,8 @@ export async function generateMetadata({
 
   return {
     title: parent?.metatags?.title
-      ? `Auto Frogy | ${parent?.metatags?.title}`
-      : "Auto Frogy | Proizvodnja i prodaja auto kopči i žabica",
+      ? `${parent?.metatags?.title} | Auto Frogy`
+      : "Proizvodnja i prodaja auto kopči i žabica | Auto Frogy",
     description:
       parent?.metatags?.description ??
       "Najveći izbor auto kopči, kopči podizača stakla, fiksatora za patosnice, nosača za tablice, ramova za tablice i ostale auto opreme. Pronađite sve na jednom mestu!",

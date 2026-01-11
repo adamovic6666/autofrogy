@@ -15,9 +15,9 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.autofrogy.com/"),
   applicationName: "Auto Frogy",
-  title: "Auto Frogy | Proizvodnja i prodaja plastičnih auto delova",
+  title: "Najveći izbor auto kopči i auto žabica u Srbiji | Auto Frogy",
   description:
-    "Preko 20 godina iskustva u proizvodnji plastičnih auto delova. Největší izbor auto kopči i žabica, kopči podizača stakla, fiksatora za patosnice, nosača i ramova za tablice, alata i ostale opreme.",
+    "Najveći izbor auto kopči i žabica za sve tipove automobila, kao i kopči podizača stakla, fiksatora za patosnice, nosača i ramova za tablice, alata i ostale auto opreme.",
   keywords: [
     "Auto kopče",
     "Auto žabice",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Auto Frogy | Proizvodnja i prodaja plastičnih auto delova",
+    title: "Proizvodnja i prodaja plastičnih auto delova | Auto Frogy",
     description:
       "Preko 20 godina iskustva u proizvodnji plastičnih auto delova. Najveći izbor auto kopči i žabica, kopči podizača stakla, fiksatora za patosnice, nosača i ramova za tablice, alata i ostale opreme.",
     url: "https://www.autofrogy.com/",
@@ -70,7 +70,10 @@ export default function RootLayout({
   return (
     <html lang="sr">
       <head>
-        <meta name="google-site-verification" content="Szvnp6mCIlU4IrY9yJpR5cfJMOpgXF6i4tzx2blgg-Y" />
+        <meta
+          name="google-site-verification"
+          content="Szvnp6mCIlU4IrY9yJpR5cfJMOpgXF6i4tzx2blgg-Y"
+        />
         <StructuredData />
       </head>
       <body className={openSans.variable}>

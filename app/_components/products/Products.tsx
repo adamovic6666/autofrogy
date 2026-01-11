@@ -32,8 +32,8 @@ const Products = ({
       }`}
     >
       <div className="container-small">
-        {isMainPage && <h2>proizvodni asortiman</h2>}
-        {parentDetails?.title && !isMainPage && <h2>{parentDetails?.title}</h2>}
+        {isMainPage && <h1>proizvodni asortiman</h1>}
+        {parentDetails?.title && !isMainPage && <h1>{parentDetails?.title}</h1>}
         {!parentDetails?.description && !isProductPage && (
           <div className={styles.description}>{description}</div>
         )}

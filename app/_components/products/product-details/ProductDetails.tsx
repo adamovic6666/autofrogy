@@ -88,7 +88,12 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [descriptionRef, rightSide, leftSide, productDetails.photo_gallery.thumb.length]);
+  }, [
+    descriptionRef,
+    rightSide,
+    leftSide,
+    productDetails.photo_gallery.thumb.length,
+  ]);
 
   return (
     <section className={styles.productDetails}>
@@ -102,7 +107,7 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
             aria-label="View main product image"
           >
             {isNew && <span className={styles.newBadge}>Novo</span>}
-            <Image src={mainImage} alt="Product main view" fill />
+            <Image src={mainImage} alt={productDetails.title} fill />
           </div>
           {!!productDetails?.photo_gallery?.thumb.length && (
             <div className={styles.additionalImages}>
