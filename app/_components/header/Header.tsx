@@ -69,10 +69,18 @@ const Header = () => {
     }
   }, [menuIsOpen, searchIsOpen, isMobile]);
 
+  useEffect(() => {
+    // Close menu when URL changes
+    setMenuIsOpen(false);
+  }, [pathname]);
+
   return (
     <header className={styles.header}>
       <div className="container">
-        <div className={styles.burger} onClick={handleOpenMenu} />
+        <div
+          className={`${styles.burger} ${menuIsOpen ? styles.burgerOpen : ""}`}
+          onClick={handleOpenMenu}
+        />
         {!searchIsOpen && (
           <div className={styles.logo}>
             <Link href={"/"}>

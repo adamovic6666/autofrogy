@@ -122,6 +122,21 @@
   height: 2.4rem;
   cursor: pointer;
   border: none;
+  transition: all 0.3s ease;
+}
+
+.burgerOpen {
+  background: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burgerOpen::before {
+  content: "✕";
+  font-size: 3.2rem;
+  font-weight: 300;
 }
 
 /* Mobile Search Overlay */
