@@ -3,7 +3,6 @@ import Header from "./_components/header/Header";
 import Footer from "./_components/footer/Footer";
 import { Open_Sans } from "next/font/google";
 import type { Metadata } from "next";
-import ogImage from "../public/images/og.png";
 import GoogleAnalytics from "./_components/google-analytics/GoogleAnalytics";
 import StructuredData from "./_components/structured-data/StructuredData";
 
@@ -51,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "Auto Frogy",
     images: [
       {
-        url: ogImage.src,
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "Auto Frogy",

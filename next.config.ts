@@ -37,24 +37,6 @@ const nextConfig: NextConfig = {
   staticPageGenerationTimeout: 180, // Increase timeout for static generation
   async redirects() {
     return [
-      // Redirect old /en URLs to their equivalent pages
-      {
-        source: "/en/:path*",
-        destination: "/:path*",
-        permanent: true,
-      },
-      // Redirect non-www to www
-      {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "autofrogy.com",
-          },
-        ],
-        destination: "https://www.autofrogy.com/:path*",
-        permanent: true,
-      },
       // Remove trailing slashes for consistency
       {
         source: "/:path+/",
