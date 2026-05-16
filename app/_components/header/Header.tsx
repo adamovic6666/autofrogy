@@ -153,7 +153,7 @@ const Header = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/proizvodi/nosaci-i-ramovi-za-tablice">
+                        <Link href="/proizvodi/nosaci-za-tablice-i-ramovi-za-tablice">
                           Nosači i ramovi za tablice
                         </Link>
                       </li>
